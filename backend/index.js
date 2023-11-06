@@ -1,0 +1,28 @@
+import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
+const PORT = process.env.PORT;
+const CONNECTION = process.env.CONNECTION;
+const app = express();
+import mongoose from "mongoose";
+import booksRoute from "./routes/booksRoute.js";
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("hello this is get");
+});
+
+app.use("/books", booksRoute);
+
+mongoose
+  .connect(CONNECTION)
+  .then(() => {
+    console.log("app is connected with mongo");
+    app.listen(PORT, (req, res) => {
+      console.log(`Everything is working fine ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
