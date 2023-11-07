@@ -12,7 +12,7 @@ function Home() {
 
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:5555/books').then((res) => {
+    axios.get('bookstore-mern-backend.vercel.app/books').then((res) => {
       setBooks(res.data.data);
       setLoading(false);
     }).catch((error) => {
