@@ -21,6 +21,7 @@ mongoose
     console.log("app is connected with mongo");
     app.listen(PORT, (req, res) => {
       console.log(`Everything is working fine ${PORT}`);
+      res.send(`<h1>Hello this is backend</h1>`);
     });
   })
   .catch((error) => {
