@@ -6,13 +6,13 @@ const CONNECTION = process.env.CONNECTION;
 const app = express();
 import mongoose from "mongoose";
 import booksRoute from "./routes/booksRoute.js";
-
+import cors from "cors";
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("hello this is get");
 });
-
+app.use(cors());
 app.use("/books", booksRoute);
 
 mongoose
