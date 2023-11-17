@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "name": "bookstore-mern-backend",
+  "builds": [
+    {
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "backend/index.js"
+    }
+  ],
+  "env": {
+    "MONGO_URI": "@CONNECTION",
+    "PORT": "@PORT"
+  },
+  "build": {
+    "env": {
+      "MONGO_URI": "@CONNECTION",
+      "PORT": "@PORT"
+    }
+  }
+}
