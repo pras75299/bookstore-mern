@@ -46,7 +46,7 @@ This repository contains the full-stack code for a Bookstore application using t
 2. Start the frontend application:
    ```
    cd frontend
-   npm start
+   npm run dev
    ```
    The frontend will run on `http://localhost:3000`.
 
